@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
         txtEmail = (EditText) findViewById(R.id.editTextEmailOrPhone);
         txtPassword = (EditText) findViewById(R.id.editTextPassword);
+        System.out.println("txtEmail: " + txtEmail);
+        System.out.println("txtPassword: " + txtPassword);
         btnLogin = (Button) findViewById(R.id.btnLogin);
         btnSignup = (Button) findViewById(R.id.btnSignupFacebook);
 
@@ -41,9 +43,9 @@ public class MainActivity extends AppCompatActivity {
                 String email = txtEmail.getText().toString().trim();
                 String password = txtPassword.getText().toString();
                 int flag = 0;
-                for (int i = 0; i < Account.accounts.size(); i++) {
-                    if (Account.accounts.get(i).getPhoneOrEmail().equals(email) &&
-                            Account.accounts.get(i).getPassword().equals(password)) {
+                for (int i = 0; i < RegisterActivity.accounts.size(); i++) {
+                    if (RegisterActivity.accounts.get(i).getPhoneOrEmail().equals(email) &&
+                            RegisterActivity.accounts.get(i).getPassword().equals(password)) {
                         flag = 1;
                         break;
                     }
