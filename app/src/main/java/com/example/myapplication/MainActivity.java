@@ -52,11 +52,20 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (flag == 1) {
                     Toast.makeText(MainActivity.this, "Login successful !", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent();
+                    intent.setClass(MainActivity.this, HomeActivity.class);
+                    intent.putExtra("email", email);
+                    startActivity(intent);
                 } else {
                     Toast.makeText(MainActivity.this, "User or password not valid !", Toast.LENGTH_SHORT).show();
-
                 }
             }
         });
+    }
+    protected void onPause(){
+super.onPause();
+txtEmail.setText("");
+txtPassword.setText("");
+
     }
 }
